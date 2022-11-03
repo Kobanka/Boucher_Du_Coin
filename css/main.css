@@ -1,0 +1,359 @@
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section,
+summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+strong, b {
+  font-weight: bold;
+}
+em, i {
+  font-style: italic;
+}
+a img {
+  border: none;
+}
+/* END RESET*/
+
+
+/* BODY STYLE */
+.grid{
+  display:  grid;
+  grid-template-areas: "header header header" "corps corps corps" "pied pied pied";
+  grid-template-columns: 10em 1fr 15em;
+  grid-template-rows: minmax(4em, auto) 1fr auto;
+  min-height: 100vh; 
+}
+.grid > div {
+  box-sizing: border-box;
+  position: relative;
+}
+/* Produit */
+.produit{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-auto-rows: minmax(15em,auto);
+  box-sizing: border-box;
+  grid-gap: .5em;
+  padding: 0 10em;
+}
+.produit > div{
+  border: none;
+}
+.imgBox > img{
+  max-width: 200px;
+  max-height: 200px;
+}
+/* *********** Fin de Produits ************** */
+
+/* ************** Body Styles **************** */
+.header {
+  background-color: rgba(105,25,11,255);
+  grid-area: header;
+}
+
+.menu {
+  background-color: #c0c0;
+  grid-area: menu;
+  display: none;
+  z-index: 10;
+}
+
+.corps {
+  background-image: url(/images/back.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  grid-area: corps;
+  max-width: 100vw;
+}
+
+.pied {
+  background-color: rgba(228,22,34,255);
+  grid-area: pied;
+}
+
+/* ********************************** En-tete ******************************** */
+.grid1{
+  display: grid;
+  grid-column: repeat(5,auto);
+  grid-row: repeat(2,auto);
+  /* grid-gap: 1em; */
+}
+
+.sec1{
+  background-color:rgba(211,20,29,255);
+  display: inline-block;
+  color: #fff;
+}
+/* .sec2{
+  
+} */
+.compte{
+  width: 5vw;
+  justify-content: center;
+  margin-left: 2em;
+}
+.utilisateur{
+  display: inline-block;
+  font-size: 2em;
+  margin-left: 20px;
+}
+.identité {
+  list-style: none;
+  display: block;
+}
+ul a{
+  text-decoration: none;
+  color: #fff;
+}
+.slogan{
+  float: right;
+  margin: 1.5em 25% 0;
+}
+.nav-link {
+  float: right;
+  margin: 0 25%  0;
+  grid-row: 2/3;
+}
+.nav-link > li > a{
+  display: block;
+  padding: 10px 5px ;
+}
+.nav-link > li > a:hover{
+  background-color:rgba(228,22,34,255);
+  transition: all 0.5s ease-in-out;
+}
+.nav-link > li:first-child a{
+  background-color:rgba(228,22,34,255);
+}
+.nav-link > li:first-child a:hover{
+  background-color: rgba(105,25,11,255);
+  transition: all 0.5s ease-in-out;
+}
+.nav-link > li{
+  display: inline-block;
+  margin-left: 0.5em;
+  color: #fff;
+}
+.nav-link .chrch{
+  background-color: blue;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 30px;
+}
+.nav-link .chrch .search{
+  flex: 1;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  color: #000;
+}
+::placeholder{
+  color: #000;
+}
+/* .sec2{
+  
+} */
+
+/* ********* Le logo ********* */
+.sec3 img{
+  height: 150px;
+  width: 150px;
+}
+
+.sec3{
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  background-color: #fff;
+  left: 80%; 
+  transform: translateX(50%);
+  display: block;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* **************** Style de l'en-tete du corps ***************** */
+.corps .part1 {
+  padding: auto;
+  text-align: center;
+  margin: 2.5em 30em 1em;
+  border: none; 
+  border-radius: 20px;
+  background-color: #fff;
+}
+.corps .part1 h2{
+  font-size: larger;
+}
+.corps .part1 .size{
+  font-size: large;
+}
+.ligne{ 
+  display: flex; 
+  flex-direction: row; 
+  margin: 0 25%;
+  color: rgba(228,22,34,255);
+}
+.ligne:before, 
+.ligne:after { 
+  content: ""; 
+  flex: 1 1;  
+  border: 2px solid rgba(228,22,34,255); 
+  margin: auto;
+} 
+.titre{
+  margin: 0 45%;
+  padding: 5px ;
+  border: none;
+  border-radius: 0 15px;
+  text-align: center;
+  background-color: rgba(228,22,34,255);
+  color: #fff;
+}
+.titre h3{
+  font-size: large;
+  margin: 5px;
+}
+
+/* **************************** Style de Grid element *************************** */
+
+.part2 .content{
+  width: 200px;
+  background: none;
+  margin: 40px 10px;
+  margin-right: 0;
+  padding: 30px 20px;
+  border-radius: 3px;
+  /* transition: all 0.3s ease; */
+}
+
+.part2 .content .profile .imgBox{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border: 1px solid rgba(228,22,34,255);
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+.part2 .content .profile .imgBox img{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+/* todo Size changing when hovering image */
+
+.Wrapper .container .profile .imgBox:hover img{
+  filter: saturate(140%);
+  transform: scale(0.98);
+}
+.part2 .content  .descrpt{
+  padding: 5px 0 ;
+  text-transform: capitalize;
+  text-align: center;
+  border: none;
+  margin: 2px 0 ;
+  border-radius: 0 15px;
+  background-color: rgba(228,22,34,255);
+  color: #fff;
+}
+.part2 .content .click{
+  display: block;
+  margin: -26px 30px; 
+  text-align: center;
+}
+.part2 .content .click .panier{
+  display: block;
+  margin: 1.9em auto 1em ;
+  background-color: #fff;
+  color: rgba(228,22,34,255);
+  border-style: unset;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  padding: .5em 1em;
+}
+
+.click{
+  text-decoration: none;
+  transition: all 0.5s ease-in-out;
+}
+/* .click .panier:hover{
+  transform: scale(1.05);
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+} */
+
+/* ****************************************** Le Pied ******************************************************* */
+
+.pied .cntPied{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1em;
+  list-style: none;
+}
+.pied .social{
+  background-color: #fff;
+  font-size: 2em;
+}
+
+.pied p{
+  font-size: 1em;
+  padding: 0 29em ;
+}
+.pied .sociaux{
+  max-height: 60px;
+  max-width: 55px;
+}
+.deco{
+  color: rgb(83, 227, 83);
+  font-size: 1.15em;
+}
+.deco2{
+  color: #fff;
+  font-size: 1.15em;
+}
+
